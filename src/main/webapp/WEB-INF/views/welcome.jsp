@@ -37,6 +37,20 @@
 
     </c:if>
 
+    <div class="container">
+        Links:
+        <ul type="circle">
+            <li><a href="admin">Admin</a></li>
+            <li><a href="edit">Edit</a></li>
+            <li><a href="login">Login</a></li>
+            <li><a href="products">Products</a></li>
+            <li><a href="registration">Registration</a></li>
+            <li><a href="welcome">Welcome</a></li>
+        </ul>
+    </div>
+
+
+
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>

@@ -18,5 +18,5 @@ target/*
 hs_err_pid*
 /.idea/
 /target/
-/SQL_JDBC.iml
+*.iml
 /src/test/

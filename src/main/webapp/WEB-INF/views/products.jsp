@@ -45,6 +45,44 @@
     </c:if>
 
 </div>
+
+<br>
+<br>
+<table class="table-bordered" width="800" align="center">
+    <tbody>
+        <tr>
+            <th>id</th><th>Manufacturer</th><th>Model</th><th>Description</th><th>Cost</th>
+        </tr>
+        <tr>
+            <td>1</td><td>Brand</td><td>SomeModel</td><td>Best one!</td><td>10 000</td>
+        </tr>
+
+
+
+    </tbody>
+</table>
+<br>
+<br>
+
+
+
+
+
+<div class="container">
+    Links:
+    <ul type="circle">
+        <li><a href="admin">Admin</a></li>
+        <li><a href="edit">Edit</a></li>
+        <li><a href="login">Login</a></li>
+        <li><a href="products">Products</a></li>
+        <li><a href="registration">Registration</a></li>
+        <li><a href="welcome">Welcome</a></li>
+    </ul>
+</div>
+
+
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
