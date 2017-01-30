@@ -14,6 +14,7 @@
 --%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
@@ -48,40 +49,41 @@
 
 <br>
 <br>
-<table class="table-bordered" width="800" align="center">
-    <tbody>
+<c:if test="${!empty listProducts}">
+    <table class="tg" align="center" width="800">
         <tr>
-            <th>id</th><th>Manufacturer</th><th>Model</th><th>Description</th><th>Cost</th>
+            <th width="20">ID</th>
+            <th width="50">Brand</th>
+            <th width="100">Model</th>
+            <th width="50">Cost</th>
+            <th width="200">Description</th>
+            <th width="50">Edit</th>
+            <th width="50">Delete</th>
         </tr>
-        <tr>
-            <td>1</td><td>Brand</td><td>SomeModel</td><td>Best one!</td><td>10 000</td>
-        </tr>
+        <c:forEach items="${listProducts}" var="product">
+            <tr>
+                <td>${product.id}</td>
+                <td>${product.brand}</td>
+                <td><a href="/bookdata/${product.id}" target="_blank">${product.model}</a></td>
+                <td>${product.cost}</td>
+                <td>${product.description}</td>
+                <td><a href="<c:url value='/edit/${product.id}'/>">Edit</a></td>
+                <td><a href="<c:url value='/remove/${product.id}'/>">Delete</a></td>
+            </tr>
+        </c:forEach>
+    </table>
+</c:if>
 
-
-
-    </tbody>
-</table>
 <br>
 <br>
-
-
-
-
 
 <div class="container">
-    Links:
+    <h4>Links:</h4>
     <ul type="circle">
         <li><a href="admin">Admin</a></li>
-        <li><a href="edit">Edit</a></li>
-        <li><a href="login">Login</a></li>
-        <li><a href="products">Products</a></li>
-        <li><a href="registration">Registration</a></li>
-        <li><a href="welcome">Welcome</a></li>
+        <li><a href="registration">Register new user</a></li>
     </ul>
 </div>
-
-
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>

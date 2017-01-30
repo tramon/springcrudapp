@@ -30,8 +30,6 @@
                 <prop key="hibernate.hbm2ddl.auto">verify</prop>
             </props>
         </property>
-
-
     </bean>
 
     <bean id="transactionManager"
@@ -40,6 +38,8 @@
     </bean>
 
     <tx:annotation-driven/>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <jpa:repositories base-package="net.proselyte.springsecurityapp.dao"/>
 </beans>

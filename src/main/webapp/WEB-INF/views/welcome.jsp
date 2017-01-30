@@ -26,7 +26,6 @@
 <body>
 
 <div class="container">
-
     <c:if test="${pageContext.request.userPrincipal.name != null}">
         <form id="logoutForm" method="POST" action="${contextPath}/logout">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -34,23 +33,16 @@
 
         <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a>
         </h2>
-
     </c:if>
+</div>
 
-    <div class="container">
-        Links:
-        <ul type="circle">
-            <li><a href="admin">Admin</a></li>
-            <li><a href="edit">Edit</a></li>
-            <li><a href="login">Login</a></li>
-            <li><a href="products">Products</a></li>
-            <li><a href="registration">Registration</a></li>
-            <li><a href="welcome">Welcome</a></li>
-        </ul>
-    </div>
-
-
-
+<div class="container">
+    <h4>Site-map:</h4>
+    <ul type="circle">
+        <li><a href="products">Products</a></li>
+        <li><a href="admin">Admin</a></li>
+        <li><a href="registration">Register new user</a></li>
+    </ul>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>

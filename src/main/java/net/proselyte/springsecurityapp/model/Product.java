@@ -15,28 +15,22 @@ import javax.persistence.Table;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "manufacturer_id")
-    private String manufacturerId;
+    @Column(name = "brand")
+    private String brand;
 
 
-    @Column(name = "name_id")       //TODO
-    private String productName;
+    @Column(name = "model")
+    private String model;
 
-    @Column(name = "product_description")
-    private String productDescription;
+    @Column(name = "description")
+    private String description;
 
     @Column(name = "cost")
     private long cost;
-
-/*
-    @ManyToMany()
-    @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles;
-*/
 
     public Product() {
     }
@@ -49,28 +43,28 @@ public class Product {
         this.id = id;
     }
 
-    public String getManufacturerId() {
-        return manufacturerId;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setManufacturerId(String manufacturerId) {
-        this.manufacturerId = manufacturerId;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getModel() {
+        return model;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public String getProductDescription() {
-        return productDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public long getCost() {
@@ -81,5 +75,14 @@ public class Product {
         this.cost = cost;
     }
 
-
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", description='" + description + '\'' +
+                ", cost=" + cost +
+                '}';
+    }
 }

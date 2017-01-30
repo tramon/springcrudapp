@@ -7,6 +7,7 @@
 --%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
@@ -36,15 +37,108 @@
     </c:if>
 </div>
 
+<h4>This is an admin only page</h4>
+
+<br>
+<br>
+<c:if test="${!empty listProducts}">
+    <table class="tg" align="center" width="800">
+        <tr>
+            <th width="20">ID</th>
+            <th width="50">Brand</th>
+            <th width="100">Model</th>
+            <th width="50">Cost</th>
+            <th width="200">Description</th>
+            <th width="50">Edit</th>
+            <th width="50">Delete</th>
+        </tr>
+        <c:forEach items="${listProducts}" var="product">
+            <tr>
+                <td>${product.id}</td>
+                <td>${product.brand}</td>
+                <td><a href="/bookdata/${product.id}" target="_blank">${product.model}</a></td>
+                <td>${product.cost}</td>
+                <td>${product.description}</td>
+                <td><a href="<c:url value='/edit/${product.id}'/>">Edit</a></td>
+                <td><a href="<c:url value='/remove/${product.id}'/>">Delete</a></td>
+            </tr>
+        </c:forEach>
+    </table>
+</c:if>
+
+<br>
+<br>
+
+<%--
+<c:url var="addAction" value="/products/add"/>
+<form:form action="${addAction}" commandName="product">
+    <table>
+        <c:if test="${!empty product.brand}">
+            <tr>
+                <td>
+                    <form:label path="id">
+                        <spring:message text="ID"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="id" readonly="true" size="8" disabled="true"/>
+                    <form:hidden path="id"/>
+                </td>
+            </tr>
+        </c:if>
+        <tr>
+            <td>
+                <form:label path="brand">
+                    <spring:message text="brand"/>
+                </form:label>
+            </td>
+            <td>
+                <form:input path="brand"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form:label path="model">
+                    <spring:message text="model"/>
+                </form:label>
+            </td>
+            <td>
+                <form:input path="model"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form:label path="cost">
+                    <spring:message text="Cost"/>
+                </form:label>
+            </td>
+            <td>
+                <form:input path="cost"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <c:if test="${!empty product.model}">
+                    <input type="submit"
+                           value="<spring:message text="Edit Product"/>"/>
+                </c:if>
+                <c:if test="${empty product.model}">
+                    <input type="submit"
+                           value="<spring:message text="Add Product"/>"/>
+                </c:if>
+            </td>
+        </tr>
+    </table>
+</form:form>--%>
+
+<br>
+<br>
+
 <div class="container">
-    Links:
+    <h4>Links:</h4>
     <ul type="circle">
-        <li><a href="admin">Admin</a></li>
-        <li><a href="edit">Edit</a></li>
-        <li><a href="login">Login</a></li>
         <li><a href="products">Products</a></li>
-        <li><a href="registration">Registration</a></li>
-        <li><a href="welcome">Welcome</a></li>
+        <li><a href="registration">Register new user</a></li>
     </ul>
 </div>
 

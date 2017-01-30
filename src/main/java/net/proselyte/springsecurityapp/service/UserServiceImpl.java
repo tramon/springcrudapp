@@ -34,11 +34,12 @@ public class UserServiceImpl implements UserService {
         roles.add(roleDao.getOne(1L));
         user.setRoles(roles);
         userDao.save(user);
-
     }
 
     @Override
     public User findByUsername(String username) {
         return userDao.findByUsername(username);
     }
+
+
 }
