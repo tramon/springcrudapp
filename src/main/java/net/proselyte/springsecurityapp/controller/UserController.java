@@ -1,6 +1,8 @@
 package net.proselyte.springsecurityapp.controller;
 
+import net.proselyte.springsecurityapp.model.Product;
 import net.proselyte.springsecurityapp.model.User;
+import net.proselyte.springsecurityapp.service.ProductService;
 import net.proselyte.springsecurityapp.service.SecurityService;
 import net.proselyte.springsecurityapp.service.UserService;
 import net.proselyte.springsecurityapp.service.UserServiceImpl;
@@ -69,10 +71,7 @@ public class UserController {
         return "welcome";
     }
 
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public String admin(Model model) {
-        return "admin";
-    }
+
 
 
 }

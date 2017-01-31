@@ -41,22 +41,22 @@
 
 <br>
 <br>
-<c:if test="${!empty listProducts}">
-    <table class="tg" align="center" width="800">
+<c:if test="${!empty listAdminProducts}">
+    <table border="1" class="tg" align="center" width="800">
         <tr>
-            <th width="20">ID</th>
+            <th width="15">ID</th>
             <th width="50">Brand</th>
-            <th width="100">Model</th>
-            <th width="50">Cost</th>
+            <th width="75">Model</th>
+            <th width="30">Cost</th>
             <th width="200">Description</th>
-            <th width="50">Edit</th>
-            <th width="50">Delete</th>
+            <th width="20">Edit</th>
+            <th width="20">Delete</th>
         </tr>
-        <c:forEach items="${listProducts}" var="product">
+        <c:forEach items="${listAdminProducts}" var="product">
             <tr>
                 <td>${product.id}</td>
                 <td>${product.brand}</td>
-                <td><a href="/bookdata/${product.id}" target="_blank">${product.model}</a></td>
+                <td><a href="/product-info/${product.id}" target="_blank">${product.model}</a></td>
                 <td>${product.cost}</td>
                 <td>${product.description}</td>
                 <td><a href="<c:url value='/edit/${product.id}'/>">Edit</a></td>

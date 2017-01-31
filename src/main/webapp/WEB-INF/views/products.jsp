@@ -1,13 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: tramo_000
-  Date: 27.01.2017
-  Time: 17:42
-  To change this template use File | Settings | File Templates.
---%>
-<%--
-  Created by IntelliJ IDEA.
-  User: tramo_000
+  User: tramon
   Date: 26.01.2017
   Time: 22:10
   To change this template use File | Settings | File Templates.
@@ -52,19 +45,19 @@
 <c:if test="${!empty listProducts}">
     <table class="tg" align="center" width="800">
         <tr>
-            <th width="20">ID</th>
+            <th width="15">ID</th>
             <th width="50">Brand</th>
-            <th width="100">Model</th>
-            <th width="50">Cost</th>
+            <th width="75">Model</th>
+            <th width="30">Cost</th>
             <th width="200">Description</th>
-            <th width="50">Edit</th>
-            <th width="50">Delete</th>
+            <th width="20">Edit</th>
+            <th width="20">Delete</th>
         </tr>
         <c:forEach items="${listProducts}" var="product">
             <tr>
                 <td>${product.id}</td>
                 <td>${product.brand}</td>
-                <td><a href="/bookdata/${product.id}" target="_blank">${product.model}</a></td>
+                <td><a href="/product-info/${product.id}" target="_blank">${product.model}</a></td>
                 <td>${product.cost}</td>
                 <td>${product.description}</td>
                 <td><a href="<c:url value='/edit/${product.id}'/>">Edit</a></td>

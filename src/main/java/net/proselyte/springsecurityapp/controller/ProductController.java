@@ -8,6 +8,7 @@ import net.proselyte.springsecurityapp.validator.ProductValidator;
 import net.proselyte.springsecurityapp.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 /**
  * Created by tramon on 27.01.2017.
  */
-@Controller
+@Controller/*("/products")*/
 public class ProductController {
 
     @Autowired
@@ -38,6 +39,14 @@ public class ProductController {
         return "products";
     }
 
+/*    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public String listAdminProducts(Model model){
+
+        model.addAttribute("admin", new Product());
+        model.addAttribute("listAdminProducts", this.productService.listProducts());
+
+        return "admin";
+    }*/
 
     @Autowired(required = true)
     //@Qualifier(value = "productService")
@@ -52,7 +61,6 @@ public class ProductController {
         return "products";
     }
 
-    //TODO
     @RequestMapping(value = "/products/add", method = RequestMethod.POST)
     public String addProduct(@ModelAttribute("product") Product product){
         if(product.getId() == 0){
@@ -74,7 +82,6 @@ public class ProductController {
     public String editProduct(@PathVariable("id") int id, Model model){
         model.addAttribute("product", this.productService.getProductById(id));
         model.addAttribute("listProducts", this.productService.listProducts());
-
         return "products";
     }
 
@@ -83,6 +90,13 @@ public class ProductController {
         model.addAttribute("product", this.productService.getProductById(id));
 
         return "productdata";
+    }
+
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public String admin(Model model) {
+        model.addAttribute("admin", new Product());
+        model.addAttribute("listAdminProducts", this.productService.listProducts());
+        return "admin";
     }
 
 
