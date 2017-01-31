@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * Created by tramon on 26.01.2017.
  */
-public interface UserDao extends JpaRepository<User,Long> {
+public interface UserDao extends JpaRepository<User,Integer> {
 
     User findByUsername(String username);
 

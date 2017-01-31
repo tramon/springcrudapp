@@ -37,7 +37,7 @@
     </c:if>
 </div>
 
-<h4>This is an admin only page</h4>
+<h4 align="center">This is an admin only page</h4>
 
 <br>
 <br>
@@ -69,11 +69,11 @@
 <br>
 <br>
 
-<%--
+
 <c:url var="addAction" value="/products/add"/>
-<form:form action="${addAction}" commandName="product">
+<form:form action="${addAction}">
     <table>
-        <c:if test="${!empty product.brand}">
+        <c:if test="${!empty admin.id}">
             <tr>
                 <td>
                     <form:label path="id">
@@ -85,49 +85,50 @@
                     <form:hidden path="id"/>
                 </td>
             </tr>
-        </c:if>
-        <tr>
-            <td>
-                <form:label path="brand">
-                    <spring:message text="brand"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="brand"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="model">
-                    <spring:message text="model"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="model"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="cost">
-                    <spring:message text="Cost"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="cost"/>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <c:if test="${!empty product.model}">
-                    <input type="submit"
-                           value="<spring:message text="Edit Product"/>"/>
-                </c:if>
-                <c:if test="${empty product.model}">
-                    <input type="submit"
-                           value="<spring:message text="Add Product"/>"/>
-                </c:if>
-            </td>
-        </tr>
+        <%--moved from here--%>
+            <tr>
+                <td>
+                    <form:label path="brand">
+                        <spring:message text="brand"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="brand"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form:label path="model">
+                        <spring:message text="model"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="model"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form:label path="cost">
+                        <spring:message text="Cost"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="cost"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <c:if test="${!empty admin.model}">
+                        <input type="submit"
+                               value="<spring:message text="Edit Product"/>"/>
+                    </c:if>
+                    <c:if test="${empty admin.model}">
+                        <input type="submit"
+                               value="<spring:message text="Add Product"/>"/>
+                    </c:if>
+                </td>
+            </tr>
+        </c:if> <%--Moved to here--%>
     </table>
 </form:form>--%>
 

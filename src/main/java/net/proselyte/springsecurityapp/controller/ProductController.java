@@ -19,8 +19,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * Created by tramon on 27.01.2017.
+ *
  */
-@Controller/*("/products")*/
+@Controller
 public class ProductController {
 
     @Autowired
@@ -28,6 +29,18 @@ public class ProductController {
 
     @Autowired
     private ProductValidator productValidator;
+
+    @Autowired(required = true)
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
+    }
+
+    @RequestMapping(value = "products", method = RequestMethod.GET)
+    public String listProducts(Model model){
+        model.addAttribute("product", new Product());
+        model.addAttribute("listProducts", this.productService.listProducts());
+        return "products";
+    }
 
     @RequestMapping(value = "/products", method = RequestMethod.POST)
     public String products(@ModelAttribute("productForm") Product productForm, BindingResult bindingResult, Model model) {
@@ -39,27 +52,21 @@ public class ProductController {
         return "products";
     }
 
-/*    @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public String listAdminProducts(Model model){
 
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public String admin(Model model) {
         model.addAttribute("admin", new Product());
         model.addAttribute("listAdminProducts", this.productService.listProducts());
-
         return "admin";
-    }*/
-
-    @Autowired(required = true)
-    //@Qualifier(value = "productService")
-    public void setProductService(ProductService productService) {
-        this.productService = productService;
     }
 
-    @RequestMapping(value = "products", method = RequestMethod.GET)
-    public String listProducts(Model model){
-        model.addAttribute("product", new Product());
-        model.addAttribute("listProducts", this.productService.listProducts());
-        return "products";
-    }
+/**/
+
+
+
+
+
+
 
     @RequestMapping(value = "/products/add", method = RequestMethod.POST)
     public String addProduct(@ModelAttribute("product") Product product){
@@ -82,6 +89,7 @@ public class ProductController {
     public String editProduct(@PathVariable("id") int id, Model model){
         model.addAttribute("product", this.productService.getProductById(id));
         model.addAttribute("listProducts", this.productService.listProducts());
+
         return "products";
     }
 
@@ -90,13 +98,6 @@ public class ProductController {
         model.addAttribute("product", this.productService.getProductById(id));
 
         return "productdata";
-    }
-
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public String admin(Model model) {
-        model.addAttribute("admin", new Product());
-        model.addAttribute("listAdminProducts", this.productService.listProducts());
-        return "admin";
     }
 
 
