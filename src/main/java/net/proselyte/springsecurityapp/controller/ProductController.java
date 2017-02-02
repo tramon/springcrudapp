@@ -54,13 +54,13 @@ public class ProductController {
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String admin(Model model) {
-        model.addAttribute("admin", new Product());
-        model.addAttribute("listAdminProducts", this.productService.listProducts());
+        model.addAttribute("product", new Product());
+        model.addAttribute("listProducts", this.productService.listProducts());
         return "admin";
     }
 
 
-    @RequestMapping(value = "/products/add", method = RequestMethod.POST)
+/*    @RequestMapping(value = "/products/add", method = RequestMethod.POST)
     public String addProduct(@ModelAttribute("product") Product product) {
         if (product.getId().equals(0)) {
             this.productService.addProduct(product);
@@ -68,13 +68,23 @@ public class ProductController {
             this.productService.updateProduct(product);
         }
         return "redirect:/products";
+    }*/
+
+    @RequestMapping(value = "/admin/add", method = RequestMethod.POST)
+    public String addProduct(@ModelAttribute("product") Product product) {
+        if (product.getId().equals(0)) {
+            this.productService.addProduct(product);
+        } else {
+            this.productService.updateProduct(product);
+        }
+        return "redirect:/admin";
     }
 
     @RequestMapping("/remove/{id}")
     public String removeProduct(@PathVariable("id") int id) {
         this.productService.removeProduct(id);
 
-        return "redirect:/products";
+        return "redirect:/admin";
     }
 
     @RequestMapping("edit/{id}")
@@ -82,7 +92,7 @@ public class ProductController {
         model.addAttribute("product", this.productService.getProductById(id));
         model.addAttribute("listProducts", this.productService.listProducts());
 
-        return "products";
+        return "admin";
     }
 
     @RequestMapping("productdata/{id}")
