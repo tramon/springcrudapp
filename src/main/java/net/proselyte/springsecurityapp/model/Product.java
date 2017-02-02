@@ -1,11 +1,6 @@
 package net.proselyte.springsecurityapp.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by tramon on 27.01.2017.
@@ -16,12 +11,11 @@ public class Product {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id = 0;
 
     @Column(name = "brand")
     private String brand;
-
 
     @Column(name = "model")
     private String model;
@@ -30,7 +24,7 @@ public class Product {
     private String description;
 
     @Column(name = "cost")
-    private long cost;
+    private Integer cost;
 
     public Product() {
     }
@@ -67,11 +61,11 @@ public class Product {
         this.description = description;
     }
 
-    public long getCost() {
+    public Integer getCost() {
         return cost;
     }
 
-    public void setCost(long cost) {
+    public void setCost(Integer cost) {
         this.cost = cost;
     }
 

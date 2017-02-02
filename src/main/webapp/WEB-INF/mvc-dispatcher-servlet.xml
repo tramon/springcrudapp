@@ -32,8 +32,7 @@
         </property>
         <property name="hibernateProperties">
             <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect
-                </prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
                 <prop key="hibernate.show_sql">true</prop>
             </props>
         </property>
@@ -51,7 +50,6 @@
     <bean id="productService" class="net.proselyte.springsecurityapp.service.ProductServiceImpl">
         <property name="productDao" ref="productDao"/>
     </bean>
-
 
     <context:component-scan base-package="net.proselyte.springsecurityapp"/>
 

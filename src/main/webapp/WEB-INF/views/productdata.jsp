@@ -53,18 +53,21 @@
 
 <table class="tg">
     <tr>
-        <th width="80">ID</th>
-        <th width="120">Title</th>
-        <th width="120">Author</th>
-        <th width="120">Price</th>
+        <th width="15">ID</th>
+        <th width="50">Brand</th>
+        <th width="75">Model</th>
+        <th width="30">Cost</th>
+        <th width="200">Description</th>
     </tr>
     <tr>
         <td>${product.id}</td>
         <td>${product.brand}</td>
         <td>${product.model}</td>
-        <td>${product.description}</td>
         <td>${product.cost/100}${product.cost%100}</td>
+        <td>${product.description}</td>
     </tr>
 </table>
+
+
 </body>
 </html>

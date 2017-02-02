@@ -30,3 +30,11 @@ INSERT INTO roles VALUES (1, 'ROLE_USER');
 INSERT INTO roles VALUES (2, 'ROLE_ADMIN');
 
 INSERT INTO user_roles VALUES (1, 2);
+
+CREATE TABLE products (
+  id          SERIAL  PRIMARY KEY   NOT NULL,
+  brand       VARCHAR(50),
+  model       VARCHAR(100)          NOT NULL,
+  description VARCHAR(255),
+  cost INT
+);

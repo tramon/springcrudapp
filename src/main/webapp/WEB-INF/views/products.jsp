@@ -75,7 +75,7 @@
 
 <form:form action="${addAction}" commandName="product">
     <table>
-        <c:if test="${!empty product.model}">
+        <c:if test="${!empty product.id}">
             <tr>
                 <td>
                     <form:label path="id">
@@ -91,7 +91,7 @@
         <tr>
             <td>
                 <form:label path="brand">
-                    <spring:message text="Title"/>
+                    <spring:message text="Brand"/>
                 </form:label>
             </td>
             <td>
@@ -101,13 +101,25 @@
         <tr>
             <td>
                 <form:label path="model">
-                    <spring:message text="Author"/>
+                    <spring:message text="Model"/>
                 </form:label>
             </td>
             <td>
                 <form:input path="model"/>
             </td>
         </tr>
+
+        <tr>
+            <td>
+                <form:label path="description">
+                    <spring:message text="Description"/>
+                </form:label>
+            </td>
+            <td>
+                <form:input path="description"/>
+            </td>
+        </tr>
+
         <tr>
             <td>
                 <form:label path="cost">

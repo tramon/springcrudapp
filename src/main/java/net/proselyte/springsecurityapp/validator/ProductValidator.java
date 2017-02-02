@@ -28,24 +28,14 @@ public class ProductValidator implements Validator {
     public void validate(Object o, Errors errors) {
         Product product = (Product) o;
 
-/*        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "Required");
-        if(user.getUsername().length() < 8 || user.getUsername().length() > 32) {
-            errors.rejectValue("username", "Size.userForm.username");
+/*        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "productname", "Required");
+        if(product.getModel().length() < 2 || product.getModel().length() > 50) {
+            errors.rejectValue("productname", "Size.productForm.productname");
         }
 
-        if (userService.findByUsername(user.getUsername()) != null) {
-            errors.rejectValue("username", "Duplicate.userForm.username");
-        }
-
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "Required");
-        if (user.getPassword().length() < 8 || user.getPassword().length() > 32) {
-            errors.rejectValue("password", "Size.userForm.password");
-        }
-
-        if (!user.getConfirmPassword().equals(user.getPassword())) {
-            errors.rejectValue("confirmPassword", "Different.userForm.password");
-        }
-*/
+        if (productService.getProductById(product.getId()) != null) {
+            errors.rejectValue("productname", "Duplicate.productForm.productname");
+        }*/
 
     }
 }
