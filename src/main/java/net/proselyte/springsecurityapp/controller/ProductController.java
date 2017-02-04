@@ -59,17 +59,6 @@ public class ProductController {
         return "admin";
     }
 
-
-/*    @RequestMapping(value = "/products/add", method = RequestMethod.POST)
-    public String addProduct(@ModelAttribute("product") Product product) {
-        if (product.getId().equals(0)) {
-            this.productService.addProduct(product);
-        } else {
-            this.productService.updateProduct(product);
-        }
-        return "redirect:/products";
-    }*/
-
     @RequestMapping(value = "/admin/add", method = RequestMethod.POST)
     public String addProduct(@ModelAttribute("product") Product product) {
         if (product.getId().equals(0)) {

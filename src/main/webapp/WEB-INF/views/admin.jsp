@@ -31,120 +31,91 @@
         <form id="logoutForm" method="post" action="${contextPath}/logout">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
-        <h2>Admin Page ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a>
+        <h2>Admin Page: ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a>
         </h2>
     </c:if>
+
 </div>
-
-<h4 align="center">This is an admin only page</h4>
-
 <br>
 <br>
-<c:if test="${!empty listProducts}">
-    <table class="tg" align="center" width="800">
-        <tr>
-            <th width="15">ID</th>
-            <th width="50">Brand</th>
-            <th width="75">Model</th>
-            <th width="30">Cost</th>
-            <th width="150">Description</th>
-            <th width="20">Edit</th>
-            <th width="20">Delete</th>
-        </tr>
-        <c:forEach items="${listProducts}" var="product">
+<div class="container2">
+    <c:url var="addAction" value="/admin/add"/>
+    <form:form action="${addAction}" commandName="product">
+        <table align="center">
+            <c:if test="${product.id != 0}">
+                <tr>
+                    <td><form:label path="id"><spring:message text="ID"/></form:label></td>
+                    <td>
+                        <form:input path="id" readonly="true" size="8" disabled="true" class="form-control"/>
+                        <form:hidden path="id" class="form-control"/>
+                    </td>
+                </tr>
+            </c:if>
             <tr>
-                <td>${product.id}</td>
-                <td>${product.brand}</td>
-                <td><a href="/productdata/${product.id}" target="_blank">${product.model}</a></td>
-                <td>${product.cost}</td>
-                <td>${product.description}</td>
-                <td><a href="<c:url value='/edit/${product.id}'/>">Edit</a></td>
-                <td><a href="<c:url value='/remove/${product.id}'/>">Delete</a></td>
+                <td><form:label path="brand"><spring:message text="Brand"/></form:label></td>
+                <td><form:input path="brand" class="form-control"/></td>
             </tr>
-        </c:forEach>
-    </table>
-</c:if>
-<br>
-<br>
+            <tr></tr>
 
-<c:url var="addAction" value="/admin/add"/>
-
-<form:form action="${addAction}" commandName="product">
-    <table class="tg">
-        <c:if test="${product.id != 0}">
             <tr>
-                <td>
-                    <form:label path="id">
-                        <spring:message text="ID"/>
-                    </form:label>
-                </td>
-                <td>
-                    <form:input path="id" readonly="true" size="8" disabled="true"/>
-                    <form:hidden path="id"/>
-                </td>
+                <td><form:label path="model"><spring:message text="Model"/></form:label></td>
+                <td><form:input path="model" class="form-control"/></td>
             </tr>
-        </c:if>
-        <tr>
-            <td>
-                <form:label path="brand">
-                    <spring:message text="Brand"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="brand"/>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <form:label path="model">
-                    <spring:message text="Model"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="model"/>
-            </td>
-        </tr>
+            <tr></tr>
+            <tr>
+                <td><form:label path="description"><spring:message text="Description "/></form:label></td>
+                <td><form:input path="description" class="form-control"/></td>
+            </tr>
+            <tr></tr>
 
-        <tr>
-            <td>
-                <form:label path="description">
-                    <spring:message text="Description"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="description"/>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <form:label path="cost">
-                    <spring:message text="Cost"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="cost"/>
-            </td>
-        </tr>
-        <tr>
+            <tr>
+                <td><form:label path="cost"><spring:message text="Cost"/></form:label></td>
+                <td><form:input path="cost" class="form-control"/></td>
+            </tr>
+            <tr>
+            <tr></tr>
             <td colspan="2">
                 <c:if test="${!empty product.model}">
-                    <input type="submit"
+                    <input type="submit" class="btn btn-lg btn-primary btn-block"
                            value="<spring:message text="Edit Product"/>"/>
                 </c:if>
                 <c:if test="${empty product.model}">
-                    <input type="submit"
+                    <input type="submit" class="btn btn-lg btn-primary btn-block"
                            value="<spring:message text="Add Product"/>"/>
                 </c:if>
             </td>
-        </tr>
-    </table>
-</form:form>
+        </table>
+    </form:form>
+</div>
+<div>
+    <c:if test="${!empty listProducts}">
+        <table class="tg" width="700" border="1">
+            <tr>
+                <th width="15">ID</th>
+                <th width="50">Brand</th>
+                <th width="75">Model</th>
+                <th width="30">Cost</th>
+                <th width="150">Description</th>
+                <th width="20">Edit</th>
+                <th width="20">Delete</th>
+            </tr>
+            <c:forEach items="${listProducts}" var="product">
+                <tr>
+                    <td>${product.id}</td>
+                    <td>${product.brand}</td>
+                    <td><a href="/productdata/${product.id}" target="_blank">${product.model}</a></td>
+                    <td>${product.cost}</td>
+                    <td>${product.description}</td>
+                    <td><a href="<c:url value='/edit/${product.id}'/>">Edit</a></td>
+                    <td><a href="<c:url value='/remove/${product.id}'/>">Delete</a></td>
+                </tr>
+            </c:forEach>
+        </table>
+    </c:if>
+</div>
 
 <br>
-<br>
-
-<div class="container">
+<div class="container2">
     <h4>Links:</h4>
     <ul type="circle">
         <li><a href="products">Products</a></li>
