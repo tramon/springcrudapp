@@ -1,9 +1,6 @@
-package net.proselyte.springsecurityapp.dao;
+package ua.goit.springcrudapp.dao;
 
-import net.proselyte.springsecurityapp.model.Product;
-import net.proselyte.springsecurityapp.model.Role;
-import net.proselyte.springsecurityapp.model.User;
-import org.springframework.data.jpa.repository.JpaRepository;
+import ua.goit.springcrudapp.model.Product;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

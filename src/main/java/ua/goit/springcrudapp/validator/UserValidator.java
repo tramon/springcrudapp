@@ -1,7 +1,7 @@
-package net.proselyte.springsecurityapp.validator;
+package ua.goit.springcrudapp.validator;
 
-import net.proselyte.springsecurityapp.model.User;
-import net.proselyte.springsecurityapp.service.UserService;
+import ua.goit.springcrudapp.model.User;
+import ua.goit.springcrudapp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;

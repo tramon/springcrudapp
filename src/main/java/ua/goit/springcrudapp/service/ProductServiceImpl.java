@@ -1,17 +1,11 @@
-package net.proselyte.springsecurityapp.service;
+package ua.goit.springcrudapp.service;
 
-import net.proselyte.springsecurityapp.dao.ProductDao;
-import net.proselyte.springsecurityapp.dao.RoleDao;
-import net.proselyte.springsecurityapp.model.Product;
-import net.proselyte.springsecurityapp.model.Role;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import ua.goit.springcrudapp.dao.ProductDao;
+import ua.goit.springcrudapp.model.Product;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by tramon on 27.01.2017.

@@ -1,7 +1,6 @@
-package net.proselyte.springsecurityapp.service;
+package ua.goit.springcrudapp.service;
 
-import net.proselyte.springsecurityapp.model.Product;
-import net.proselyte.springsecurityapp.model.User;
+import ua.goit.springcrudapp.model.Product;
 
 import java.util.List;
 

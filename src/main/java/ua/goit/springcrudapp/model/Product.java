@@ -1,4 +1,4 @@
-package net.proselyte.springsecurityapp.model;
+package ua.goit.springcrudapp.model;
 
 import javax.persistence.*;
 

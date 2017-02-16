@@ -1,4 +1,4 @@
-package net.proselyte.springsecurityapp.service;
+package ua.goit.springcrudapp.service;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

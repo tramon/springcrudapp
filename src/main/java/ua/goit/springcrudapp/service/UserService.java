@@ -1,6 +1,6 @@
-package net.proselyte.springsecurityapp.service;
+package ua.goit.springcrudapp.service;
 
-import net.proselyte.springsecurityapp.model.User;
+import ua.goit.springcrudapp.model.User;
 
 /**
  * Created by tramon on 26.01.2017.

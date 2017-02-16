@@ -1,6 +1,6 @@
-package net.proselyte.springsecurityapp.dao;
+package ua.goit.springcrudapp.dao;
 
-import net.proselyte.springsecurityapp.model.Product;
+import ua.goit.springcrudapp.model.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;

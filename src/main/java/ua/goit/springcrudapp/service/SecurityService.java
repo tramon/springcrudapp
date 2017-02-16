@@ -1,4 +1,4 @@
-package net.proselyte.springsecurityapp.service;
+package ua.goit.springcrudapp.service;
 
 /**
  * Created by tramon 26.01.2017.

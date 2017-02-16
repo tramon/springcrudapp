@@ -1,12 +1,9 @@
-package net.proselyte.springsecurityapp.controller;
+package ua.goit.springcrudapp.controller;
 
-import net.proselyte.springsecurityapp.model.Product;
-import net.proselyte.springsecurityapp.model.User;
-import net.proselyte.springsecurityapp.service.ProductService;
-import net.proselyte.springsecurityapp.service.SecurityService;
-import net.proselyte.springsecurityapp.service.UserService;
-import net.proselyte.springsecurityapp.service.UserServiceImpl;
-import net.proselyte.springsecurityapp.validator.UserValidator;
+import ua.goit.springcrudapp.model.User;
+import ua.goit.springcrudapp.service.SecurityService;
+import ua.goit.springcrudapp.service.UserService;
+import ua.goit.springcrudapp.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
