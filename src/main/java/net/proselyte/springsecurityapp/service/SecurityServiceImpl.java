@@ -1,6 +1,5 @@
 package net.proselyte.springsecurityapp.service;
 
-import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -12,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * Created by tramon on 26.01.2017.
+ *
  */
 
 @Service
@@ -19,11 +19,15 @@ public class SecurityServiceImpl implements SecurityService {
 
     private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(SecurityServiceImpl.class);
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
+    private final AuthenticationManager authenticationManager;
+
+    private final UserDetailsService userDetailsService;
 
     @Autowired
-    private UserDetailsService userDetailsService;
+    public SecurityServiceImpl(AuthenticationManager authenticationManager, UserDetailsService userDetailsService) {
+        this.authenticationManager = authenticationManager;
+        this.userDetailsService = userDetailsService;
+    }
 
 
     @Override

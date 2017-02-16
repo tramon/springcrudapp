@@ -15,7 +15,6 @@
 
         <form-login login-page="/login" default-target-url="/welcome" authentication-failure-url="/login?error"
                     username-parameter="username" password-parameter="password"/>
-
         <logout logout-success-url="/login?logout"/>
     </http>
 
@@ -29,8 +28,7 @@
                 class="net.proselyte.springsecurityapp.service.UserDetailsServiceImpl">
     </beans:bean>
 
-    <beans:bean id="encoder"
-                class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+    <beans:bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
         <beans:constructor-arg name="strength" value="11"/>
     </beans:bean>
 </beans:beans>

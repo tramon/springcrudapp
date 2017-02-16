@@ -4,6 +4,7 @@ import net.proselyte.springsecurityapp.model.User;
 
 /**
  * Created by tramon on 26.01.2017.
+ *
  */
 
 

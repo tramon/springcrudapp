@@ -5,12 +5,15 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created by tramon on 30.01.2017.
+ *
  */
+@Repository
 public class ProductDaoImpl implements ProductDao {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductDaoImpl.class);
@@ -49,7 +52,7 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public Product getProductById(Integer id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Product product = (Product) session.load(Product.class,new Integer(id));
+        Product product = (Product) session.load(Product.class, new Integer(id));
         LOGGER.info("Product successfully loaded. Book Product: " + product);
 
         return product;

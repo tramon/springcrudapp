@@ -39,7 +39,7 @@
 
     <tx:annotation-driven/>
 
-    <tx:annotation-driven transaction-manager="transactionManager"/>
-
     <jpa:repositories base-package="net.proselyte.springsecurityapp.dao"/>
+
+    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
 </beans>

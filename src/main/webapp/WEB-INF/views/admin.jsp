@@ -89,7 +89,7 @@
 </div>
 <div>
     <c:if test="${!empty listProducts}">
-        <table class="tg" width="700" border="1">
+        <table class="tg" width="700" border="0">
             <tr>
                 <th width="15">ID</th>
                 <th width="50">Brand</th>

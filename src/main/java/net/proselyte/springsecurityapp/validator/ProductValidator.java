@@ -16,8 +16,12 @@ import org.springframework.validation.Validator;
 @Component
 public class ProductValidator implements Validator {
 
+    private final ProductService productService;
+
     @Autowired
-    private ProductService productService;
+    public ProductValidator(ProductService productService) {
+        this.productService = productService;
+    }
 
     @Override
     public boolean supports(Class<?> aClass) {

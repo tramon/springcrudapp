@@ -14,8 +14,7 @@
 
     <import resource="mvc-dispatcher-servlet.xml"/>
 
-
-    <context:component-scan base-package="net.proselyte.springsecurityapp.*"/>
+    <!--<context:component-scan base-package="net.proselyte.springsecurityapp.*"/>-->
 
     <context:property-placeholder location="classpath:database.properties"/>
 

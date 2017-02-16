@@ -19,15 +19,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * Created by tramon on 27.01.2017.
+ *
  */
 @Controller
 public class ProductController {
 
-    @Autowired
     private ProductService productService;
 
-    @Autowired
     private ProductValidator productValidator;
+
+    @Autowired
+    public ProductController(ProductValidator productValidator, ProductService productService) {
+        this.productValidator = productValidator;
+        this.productService = productService;
+    }
 
     @Autowired(required = true)
     @Qualifier(value = "productService")
