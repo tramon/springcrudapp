@@ -11,9 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by tramon on 26.01.2017.
- */
+
 @Service
 public class UserServiceImpl implements UserService {
 

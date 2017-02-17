@@ -9,10 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by tramon on 30.01.2017.
- *
- */
+
 @Repository
 public class ProductDaoImpl implements ProductDao {
 

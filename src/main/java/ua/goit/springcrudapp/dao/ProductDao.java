@@ -5,10 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by tramon on 27.01.2017.
- *
- */
+
 @Repository
 public interface ProductDao {
 

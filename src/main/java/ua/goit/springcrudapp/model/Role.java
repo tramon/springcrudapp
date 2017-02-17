@@ -3,11 +3,6 @@ package ua.goit.springcrudapp.model;
 import javax.persistence.*;
 import java.util.Set;
 
-/**
- * Created by tramon on 26.01.2017.
- *
- */
-
 
 @Entity
 @Table (name = "roles")

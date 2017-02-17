@@ -7,9 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-/**
- * Created by tramon on 27.01.2017.
- */
+
 @Component
 public class ProductValidator implements Validator {
 
@@ -29,6 +27,7 @@ public class ProductValidator implements Validator {
     public void validate(Object o, Errors errors) {
         Product product = (Product) o;
 
+        //// TODO: 16.02.2017  finish implementation of product Validator
 /*        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "productname", "Required");
         if(product.getModel().length() < 2 || product.getModel().length() > 50) {
             errors.rejectValue("productname", "Size.productForm.productname");

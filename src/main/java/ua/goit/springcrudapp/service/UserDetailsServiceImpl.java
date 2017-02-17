@@ -15,10 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by tramon on 26.01.2017.
- *
- */
 
 @Component
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -31,12 +27,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
     @Override
-    @Transactional/*(readOnly = true)*/
+    @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
 
-        User user = userDao.findByUsername(username); // is New user created?
+        User user = userDao.findByUsername(username);
 
         for (Role role : user.getRoles()) {
             grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));

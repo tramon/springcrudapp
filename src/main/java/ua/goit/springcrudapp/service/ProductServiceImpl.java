@@ -7,10 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * Created by tramon on 27.01.2017.
- *
- */
+
 @Service
 public class ProductServiceImpl implements ProductService {
 
@@ -19,7 +16,6 @@ public class ProductServiceImpl implements ProductService {
     public void setProductDao(ProductDao productDao) {
         this.productDao = productDao;
     }
-
 
 
     @Override

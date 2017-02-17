@@ -2,9 +2,7 @@ package ua.goit.springcrudapp.model;
 
 import javax.persistence.*;
 
-/**
- * Created by tramon on 27.01.2017.
- */
+
 @Entity
 @Table(name = "products")
 public class Product {
