@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - tramon-spring-crud@195.78.112.104" uuid="5de52356-c912-4866-8e1b-1c456414eaf1">
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <introspection-scope>tramonSpringCRUD:pg_catalog,postgres,public</introspection-scope>
+      <resolve-scope>tramonSpringCRUD:postgres,public</resolve-scope>
+    </data-source>
+  </component>
+</project>
