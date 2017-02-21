@@ -17,7 +17,6 @@ public class ProductServiceImpl implements ProductService {
         this.productDao = productDao;
     }
 
-
     @Override
     @Transactional
     public void addProduct(Product product) {
